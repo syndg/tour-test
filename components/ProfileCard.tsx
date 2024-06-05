@@ -34,11 +34,15 @@ export default function ProfileCard({
         />
         <div className="text-center">
           <div className="text-xl font-semibold">{userProfile?.full_name}</div>
-          <Badge variant="outline" className="mb-2">
-            {userProfile?.role}
-          </Badge>
+          {userProfile?.role && (
+            <Badge variant="outline" className="mb-2">
+              {userProfile?.role}
+            </Badge>
+          )}
           <div className="text-gray-500 dark:text-gray-400 text-sm">
-            @{userProfile?.username}
+            {userProfile?.username
+              ? `@${userProfile?.username}`
+              : "Complete your profile"}
           </div>
         </div>
       </CardHeader>

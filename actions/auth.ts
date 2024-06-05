@@ -1,7 +1,6 @@
 "use server";
 import { authSchema, type AuthData } from "@/lib/schemas/authSchema";
 import { createSupabaseServerClient } from "@/utils/supabase/supabaseServerClient";
-import { z } from "zod";
 
 export async function signup(values: AuthData): Promise<ValidSAPayload> {
   const supabase = createSupabaseServerClient();

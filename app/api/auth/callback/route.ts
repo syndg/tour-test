@@ -20,7 +20,7 @@ export async function GET(request: Request) {
     }
   }
   revalidatePath("/");
-  let redirectTo = new URL("/", requestUrl.origin);
+  let redirectTo = new URL("/profile", requestUrl.origin);
   if (next) {
     // decode next param
     const decodedNext = decodeURIComponent(next);

@@ -11,7 +11,7 @@ const GoogleLoginButton = () => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: toSiteURL("/api/auth/confirm"),
+        redirectTo: toSiteURL("/api/auth/callback"),
       },
     });
     if (error) {

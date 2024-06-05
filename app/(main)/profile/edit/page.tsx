@@ -9,10 +9,7 @@ export const dynamic = "force-dynamic";
 export default async function UserOnboardingCard() {
   const data = await serverGetLoggedInUser();
 
-  if (data.status === "error" || !data?.user) {
-    redirect("/login");
-  }
-
+  if (!data?.user) return;
   const userProfile = await getUserProfile(data?.user.id);
 
   return (

@@ -21,6 +21,7 @@ export default function UserButton({ user }: UserButtonProps) {
   const logout = async () => {
     await supabase.auth.signOut();
     router.refresh();
+    router.push("/login");
   };
 
   return (
